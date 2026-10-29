@@ -1,12 +1,14 @@
-# Webex Skills
+# Webex Skills and Plugins
 
-Agent skills for building with Webex, for Codex, GitHub Copilot, and Claude Code.
+Agent skills and plugins for building with Webex, for Codex, GitHub Copilot, Claude Code, and Cursor.
 
-## Skills
+## Packages
 
-| Skill | Description | Releases |
+| Package | Description | Details |
 | --- | --- | --- |
-| [webex-api-knowledge](skills/webex-api-knowledge/) | Grounded Webex Public API knowledge for building integrations | [release/](skills/webex-api-knowledge/release/) |
+| [webex-api-knowledge](skills/webex-api-knowledge/) | Grounded Webex Public API knowledge for building integrations | [releases](skills/webex-api-knowledge/release/) |
+| [Webex Connect skills](PLUGINS.md) | 19 individually versioned and installable Webex Connect skill packages | [skill workspaces](skills/) |
+| [webex-connect-ai](plugins/webex-connect-ai/) | Plugin recipe linking 19 independently packaged Webex Connect skills | [plugin source](plugins/webex-connect-ai/) |
 
 See each skill's README for installation and usage.
 
@@ -21,26 +23,54 @@ skills/<name>/
   tests/                    skill tests (`npm test`)
   release/                  CHANGELOG.md and released packages, one .tgz per version
 scripts/                    shared repo tooling (validate, detect changes, changelog, package)
-.agents/skills/             project-level agent skills for working on this repo (e.g. skill-changelog)
+.agents/skills/             project-level agent skills for working on this repo
+.agents/plugins/            local Codex plugin marketplace
+.claude-plugin/             local Claude Code plugin marketplace
+.cursor-plugin/             local Cursor plugin marketplace
+plugins/webex-connect-ai/   plugin recipe, host manifests, commands, and assets
+plugin-packages/<name>/       generated, self-contained plugin package used by marketplaces
 .github/workflows/          CI verification and release packaging
 ```
 
 Each skill is an npm workspace, so its `package.json` owns its version and packaging.
+
+The 19 Webex Connect skills are individual packages under `skills/`. The
+`webex-connect-ai` plugin recipe selects them by package name in
+`plugins/webex-connect-ai/plugin.json`. `npm run plugin:build` assembles the
+selected skills with plugin-specific commands, rules, manifests, and branding
+into the committed `plugin-packages/` directory. Marketplace catalogs point to
+that self-contained package, so installs from a GitHub clone work without a
+local build step. CI rebuilds it and checks that the committed package matches
+the source recipe and skills. The package lock records linked skill versions.
+The generated [plugin catalog](PLUGINS.md) lists the plugin and its skill links.
 
 ## Development
 
 Requires Node.js 20 or newer.
 
 ```sh
-npm run validate                                  # validate all skills
+npm run validate                                  # validate skills and the plugin package
 npm test                                          # test all skills
 npm test --workspace skills/<name>                # test one skill
 node scripts/package-skill.mjs <name> --dry-run   # preview a package
+npm run plugin:build                              # assemble installable plugin packages
+npm run catalog:generate                          # refresh PLUGINS.md and catalog.json
+```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for adding plugins and keeping their
+manifests, marketplaces, and catalog in sync.
+
+To refresh the committed package after changing a plugin or linked skill, run
+`npm run plugin:build`, then install the Codex plugin from this repository with:
+
+```sh
+codex plugin marketplace add .
+codex plugin add webex-connect-ai@webex-skills
 ```
 
 ## CI
 
-**Verify skills** runs on every push and pull request. It detects which skills changed and validates, tests, and dry-run packs only those. Changes to shared `scripts/`, `.github/`, or the root `package.json` verify every skill. Use the `verified` check for branch protection.
+**Verify skills** runs on every push and pull request. It detects changed skills and validates, tests, and dry-run packs only those. Plugin changes also run the plugin package validator. Changes to shared skill tooling verify all skills. Use the `verified` check for branch protection.
 
 ## Releasing a skill
 
@@ -55,6 +85,22 @@ Versions are `X.Y.Z` (stable) or `X.Y.Z-beta.N` (pre-release). Stable releases r
 **Pre-release**: bump `version` to `X.Y.Z-beta.N`, merge, and run **Package skill release**.
 
 The workflow validates, tests, packs `skills/<name>/release/<name>-<version>.tgz` and `<name>-latest.tgz`, and commits them to the default branch. Stable releases are also tagged `<name>@<version>`; these tags mark where the next changelog starts. Existing versions are never overwritten. The changelog is not shipped inside the package.
+
+## Releasing a plugin
+
+A plugin version identifies the complete bundle: plugin metadata, commands,
+rules, assets, and the checked-in source of every linked skill at the release
+commit. Bump the plugin version whenever bundled content or a linked skill's
+package version changes. The generated `plugin-lock.json` records selected
+skill versions, and CI requires a version bump when bundled inputs change.
+
+For a release, update `plugins/<name>/release/CHANGELOG.md` for stable
+versions, update the plugin version consistently in its manifests and
+marketplace catalogs, run `npm run plugin:build`, and commit the generated
+`plugin-packages/<name>/` directory. Then run **Actions > Package plugin
+release** on the default branch. It archives the committed bundle as
+`plugins/<name>/release/<name>-<version>.tgz` and `<name>-latest.tgz`, and tags
+the release as `<name>@<version>`. Released version archives are immutable.
 
 ## Adding a skill
 
