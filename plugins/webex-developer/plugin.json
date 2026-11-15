@@ -1,0 +1,9 @@
+{
+  "name": "webex-developer",
+  "displayName": "Webex Developer",
+  "version": "0.1.0-beta.1",
+  "description": "Grounded Webex Public API knowledge for building Webex REST, OAuth, webhook, meetings, messaging, calling, and contact center integrations.",
+  "skills": [
+    "webex-api-knowledge"
+  ]
+}

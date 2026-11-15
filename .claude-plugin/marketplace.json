@@ -8,7 +8,7 @@
       "name": "webex-connect-ai",
       "source": "./plugin-packages/webex-connect-ai",
       "description": "Webex Connect AI skills for digital-asset lifecycle operations, digital channels, live chat widgets, and Android plus iOS push and in-app messaging demos.",
-      "version": "0.1.0-beta.1",
+      "version": "0.1.0-beta.2",
       "author": {
         "name": "Cisco SQBU"
       },
@@ -19,6 +19,22 @@
         "android",
         "ios",
         "live-chat"
+      ]
+    },
+    {
+      "name": "webex-developer",
+      "source": "./plugin-packages/webex-developer",
+      "description": "Grounded Webex Public API knowledge for building Webex REST, OAuth, webhook, meetings, messaging, calling, and contact center integrations.",
+      "version": "0.1.0-beta.1",
+      "author": {
+        "name": "Cisco Webex"
+      },
+      "category": "Developer Tools",
+      "tags": [
+        "webex",
+        "api",
+        "oauth",
+        "webhooks"
       ]
     }
   ]

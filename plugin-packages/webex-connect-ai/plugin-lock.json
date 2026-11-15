@@ -1,6 +1,6 @@
 {
   "name": "webex-connect-ai",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "skills": {
     "webex-connect-setup": "0.1.0-beta.1",
     "webexconnect-android-push-inapp-messaging-builder": "0.1.0-beta.1",

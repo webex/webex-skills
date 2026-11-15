@@ -1,0 +1,44 @@
+{
+  "name": "webex-developer",
+  "version": "0.1.0-beta.1",
+  "description": "Grounded Webex Public API knowledge for building Webex REST, OAuth, webhook, meetings, messaging, calling, and contact center integrations.",
+  "author": {
+    "name": "Cisco Webex",
+    "url": "https://developer.webex.com"
+  },
+  "homepage": "https://developer.webex.com",
+  "repository": "https://github.com/webex/webex-skills",
+  "license": "MIT",
+  "keywords": [
+    "webex",
+    "api",
+    "oauth",
+    "webhooks",
+    "meetings",
+    "messaging",
+    "calling",
+    "contact-center"
+  ],
+  "skills": "./skills/",
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "Webex Developer",
+    "shortDescription": "Grounded Webex API knowledge",
+    "longDescription": "Retrieves current Webex Public API and developer-portal knowledge after a Webex login, then uses it to explain or implement Webex REST, OAuth, webhook, meetings, messaging, calling, and contact center code in your project.",
+    "developerName": "Cisco Webex",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://developer.webex.com",
+    "defaultPrompt": [
+      "Create a Webex webhook for new messages",
+      "Implement Webex OAuth integration login",
+      "List my upcoming Webex meetings with the REST API"
+    ],
+    "brandColor": "#316AFF",
+    "logo": "./assets/webex-icon-400.png",
+    "composerIcon": "./assets/webex-icon-400.png"
+  }
+}

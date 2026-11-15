@@ -2,7 +2,7 @@
 
 Available plugin bundles and their linked standalone skills. Generated from plugin manifests and skill package metadata; edit the source files and run `npm run catalog:generate`.
 
-## Webex Connect AI (0.1.0-beta.1)
+## Webex Connect AI (0.1.0-beta.2)
 
 Webex Connect skills for tenant setup, digital-channel messaging, asset management, webhooks, and SDK app development.
 
@@ -29,3 +29,13 @@ Surfaces: Claude Code, Codex, Cursor
 | [`webexconnect-voice-sendmessage`](<skills/webexconnect-voice-sendmessage/skill/webexconnect-voice-sendmessage/SKILL.md>) | Build and validate Webex Connect Voice API v1 and documented Send Message API v2 voice requests for outbound calls, text-to-speech, media, callbacks, and call status. |
 | [`webexconnect-webhooks-events`](<skills/webexconnect-webhooks-events/skill/webexconnect-webhooks-events/SKILL.md>) | Build and troubleshoot Webex Connect webhook receivers, callback verification, inbound events, Event API requests, retries, and data streams. |
 | [`webexconnect-whatsapp-sendmessage`](<skills/webexconnect-whatsapp-sendmessage/skill/webexconnect-whatsapp-sendmessage/SKILL.md>) | Build and validate Webex Connect WhatsApp API v1 messages for session replies, approved templates, media, interactive content, and callbacks. |
+
+## Webex Developer (0.1.0-beta.1)
+
+Grounded Webex Public API knowledge for building Webex REST, OAuth, webhook, meetings, messaging, calling, and contact center integrations.
+
+Surfaces: Claude Code, Codex
+
+| Skill | Description |
+| --- | --- |
+| [`webex-api-knowledge`](<skills/webex-api-knowledge/skill/webex-api-knowledge/SKILL.md>) | Retrieve grounded Webex Public API and integration knowledge, then implement or explain working Webex code in the user's local project. Use for Webex REST APIs, OAuth integrations, webhooks, meetings, messaging, calling, contact center, and related developer-portal questions. Do not use for administering a live Webex organization unless the user separately requests that action. |
