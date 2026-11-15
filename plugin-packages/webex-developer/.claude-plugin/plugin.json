@@ -1,0 +1,23 @@
+{
+  "name": "webex-developer",
+  "version": "0.1.0-beta.1",
+  "description": "Grounded Webex Public API knowledge for building Webex REST, OAuth, webhook, meetings, messaging, calling, and contact center integrations.",
+  "author": {
+    "name": "Cisco Webex",
+    "url": "https://developer.webex.com"
+  },
+  "homepage": "https://developer.webex.com",
+  "repository": "https://github.com/webex/webex-skills",
+  "license": "MIT",
+  "keywords": [
+    "webex",
+    "api",
+    "oauth",
+    "webhooks",
+    "meetings",
+    "messaging",
+    "calling",
+    "contact-center"
+  ],
+  "skills": "./skills/"
+}

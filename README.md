@@ -9,6 +9,7 @@ Agent skills and plugins for building with Webex, for Codex, GitHub Copilot, Cla
 | [webex-api-knowledge](skills/webex-api-knowledge/) | Grounded Webex Public API knowledge for building integrations | [releases](skills/webex-api-knowledge/release/) |
 | [Webex Connect skills](PLUGINS.md) | 19 individually versioned and installable Webex Connect skill packages | [skill workspaces](skills/) |
 | [webex-connect-ai](plugins/webex-connect-ai/) | Plugin recipe linking 19 independently packaged Webex Connect skills | [plugin source](plugins/webex-connect-ai/) |
+| [webex-developer](plugins/webex-developer/) | Claude Code and Codex plugin for the webex-api-knowledge skill | [plugin source](plugins/webex-developer/) |
 
 See each skill's README for installation and usage.
 

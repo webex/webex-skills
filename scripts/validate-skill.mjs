@@ -24,7 +24,13 @@ export function validateSkill(name) {
   const directory = skillDirectory(name);
   const shippedDirectory = join(directory, "skill", name);
 
-  for (const required of ["README.md", "package.json", join("skill", name, "SKILL.md"), join("release", "CHANGELOG.md")]) {
+  for (const required of [
+    "README.md",
+    "package.json",
+    join("skill", name, "SKILL.md"),
+    join("skill", name, "LICENSE"),
+    join("release", "CHANGELOG.md"),
+  ]) {
     if (!existsSync(join(directory, required))) errors.push(`missing ${required}`);
   }
   if (errors.length) return errors;
@@ -37,6 +43,9 @@ export function validateSkill(name) {
     errors.push(`package.json: "bin" must define exactly one command named "${name}"`);
   }
   if (!SEMVER.test(pkg.version || "")) errors.push(`package.json: invalid version "${pkg.version}"`);
+  if (!pkg.license || pkg.license === "UNLICENSED") {
+    errors.push(`package.json: "license" must name the license in skill/${name}/LICENSE`);
+  }
   if (!Array.isArray(pkg.files) || !pkg.files.includes(`skill/${name}/`)) {
     errors.push(`package.json: "files" must include "skill/${name}/"`);
   }

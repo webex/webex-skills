@@ -1,13 +1,13 @@
 {
   "name": "webex-connect-ai",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "description": "Webex Connect skills for digital-asset lifecycle operations, digital-channel messaging, live chat widgets, Android and iOS push plus in-app messaging demos, setup workflows, and API integrations.",
   "author": {
     "name": "Cisco SQBU",
     "url": "https://developers.webexconnect.io"
   },
   "homepage": "https://developers.webexconnect.io/reference/apioverview",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "keywords": [
     "webex-connect",
     "sms",

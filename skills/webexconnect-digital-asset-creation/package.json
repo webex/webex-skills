@@ -22,6 +22,6 @@
     "agent-skill",
     "webex-connect"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true
 }

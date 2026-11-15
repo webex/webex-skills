@@ -1,5 +1,9 @@
 # webex-connect-ai changelog
 
+## 0.1.0-beta.2
+
+- License the plugin and its linked skills under MIT.
+
 ## 0.1.0-beta.1
 
 - Package the Webex Connect plugin with its 19 linked, independently versioned skills.
