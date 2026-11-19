@@ -2,8 +2,6 @@
 
 Give Codex, GitHub Copilot in VS Code, or Claude Code grounded Webex Public API knowledge while building integrations. The skill runs a local Node.js helper that signs the developer in to Webex as a public OAuth client using PKCE (callback on `http://localhost:17177/callback`), stores the resulting token pair in macOS Keychain or Windows DPAPI-encrypted local storage, and queries the Webex Developer AI Assistant knowledge service. No client secret is used or shipped.
 
-The current fixed service origin is the integration deployment. This package is for pilot testing until the production service is approved.
-
 ## Requirements
 
 - Node.js 20 or newer

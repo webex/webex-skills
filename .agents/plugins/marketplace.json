@@ -19,7 +19,7 @@
     },
     {
       "name": "webex-developer",
-      "version": "0.1.0-beta.1",
+      "version": "1.0.0",
       "source": {
         "source": "local",
         "path": "./plugin-packages/webex-developer"

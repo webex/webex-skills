@@ -30,7 +30,7 @@ Surfaces: Claude Code, Codex, Cursor
 | [`webexconnect-webhooks-events`](<skills/webexconnect-webhooks-events/skill/webexconnect-webhooks-events/SKILL.md>) | Build and troubleshoot Webex Connect webhook receivers, callback verification, inbound events, Event API requests, retries, and data streams. |
 | [`webexconnect-whatsapp-sendmessage`](<skills/webexconnect-whatsapp-sendmessage/skill/webexconnect-whatsapp-sendmessage/SKILL.md>) | Build and validate Webex Connect WhatsApp API v1 messages for session replies, approved templates, media, interactive content, and callbacks. |
 
-## Webex Developer (0.1.0-beta.1)
+## Webex Developer (1.0.0)
 
 Grounded Webex Public API knowledge for building Webex REST, OAuth, webhook, meetings, messaging, calling, and contact center integrations.
 

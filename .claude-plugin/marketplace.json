@@ -25,7 +25,7 @@
       "name": "webex-developer",
       "source": "./plugin-packages/webex-developer",
       "description": "Grounded Webex Public API knowledge for building Webex REST, OAuth, webhook, meetings, messaging, calling, and contact center integrations.",
-      "version": "0.1.0-beta.1",
+      "version": "1.0.0",
       "author": {
         "name": "Cisco Webex"
       },

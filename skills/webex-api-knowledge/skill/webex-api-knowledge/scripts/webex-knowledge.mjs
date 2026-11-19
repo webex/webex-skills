@@ -19,7 +19,7 @@ const REQUEST_TIMEOUT_MS = 20_000;
 
 // Public client: PKCE secures the flow, so there is no client secret.
 export const OAUTH_CLIENT_ID =
-  "Cee9c0e3322bbb1ec117695231df69c06951a91d0acf45541c69de1d27b552cab";
+  "C6ad9eb3e8a204d170c664abdf1646570bb2c071319316353a836de5f535326b6";
 export const OAUTH_SCOPES = "identity:people_read spark:mcp";
 export const CALLBACK_PORT = 17177;
 export const REDIRECT_URI = `http://localhost:${CALLBACK_PORT}/callback`;
